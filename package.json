@@ -1,0 +1,8 @@
+{
+  "name": "certificados-simple",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npx http-server -p 3000 -c-1"
+  }
+}

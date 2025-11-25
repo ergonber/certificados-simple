@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificados Arweave</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@irys/sdk@0.1.8/build/web/sdk.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 Sistema de Certificados</h1>
+            <p>Almacena certificados permanentemente en Arweave usando Arweave.app</p>
+        </div>
+
+        <!-- Sección Wallet -->
+        <div class="card" id="wallet-section">
+            <h2>🔗 Conectar Wallet</h2>
+            <button id="connectWallet" class="btn-primary">Conectar Arweave.app</button>
+            
+            <div id="walletInfo" class="wallet-info hidden">
+                <h3>✅ Wallet Conectada</h3>
+                <p><strong>📍 Address:</strong> <span id="walletAddress"></span></p>
+                <p><strong>💰 Balance:</strong> <span id="walletBalance"></span> AR</p>
+                <p><strong>🌐 Red:</strong> <span id="walletNetwork"></span></p>
+                <button id="disconnectWallet" class="btn-danger">Desconectar</button>
+            </div>
+        </div>
+
+        <!-- Formulario de Certificado -->
+        <div class="card hidden" id="certificate-section">
+            <h2>📄 Generar Certificado</h2>
+            <form id="certificateForm">
+                <input type="text" id="tallerista" placeholder="Nombre del tallerista" required>
+                <input type="text" id="curso" placeholder="Nombre del curso" required>
+                <input type="date" id="fecha" required>
+                <button type="submit" id="generateCert" class="btn-success">
+                    🎫 Generar Certificado en TESTNET
+                </button>
+            </form>
+            <p class="note">🔓 TESTNET - Transacciones gratuitas | Arweave.app pedirá confirmación</p>
+        </div>
+
+        <!-- Resultados -->
+        <div class="card hidden" id="result-section">
+            <h2>📋 Resultados</h2>
+            <div id="resultContent"></div>
+        </div>
+
+        <!-- Loading -->
+        <div class="card hidden" id="loading-section">
+            <div class="loading">
+                <p id="loadingMessage">Procesando...</p>
+            </div>
+        </div>
+
+        <!-- Información -->
+        <div class="card">
+            <h2>ℹ️ Información</h2>
+            <p><strong>Arweave.app detectada:</strong> <span id="walletStatus">Comprobando...</span></p>
+            <p>Usa <strong>Testnet</strong> para pruebas gratuitas. Para Mainnet necesitas AR real.</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
